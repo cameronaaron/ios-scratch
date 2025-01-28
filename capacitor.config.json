@@ -1,5 +1,6 @@
 {
   "appId": "com.cameron.Scratch",
   "appName": "Scratch For IOS",
-  "webDir": "www"
+  "webDir": "www",
+  "license": "AGPL-3.0"
 }

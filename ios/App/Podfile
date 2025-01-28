@@ -1,3 +1,5 @@
+# This project is licensed under the GNU Affero General Public License (AGPL)
+
 require_relative '../../node_modules/@capacitor/ios/scripts/pods_helpers'
 
 platform :ios, '13.0'
