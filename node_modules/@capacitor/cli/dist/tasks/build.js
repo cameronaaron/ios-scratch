@@ -21,14 +21,9 @@ async function buildCommand(config, selectedPlatformName, buildOptions) {
         keystorepath: buildOptions.keystorepath || config.android.buildOptions.keystorePath,
         keystorepass: buildOptions.keystorepass || config.android.buildOptions.keystorePassword,
         keystorealias: buildOptions.keystorealias || config.android.buildOptions.keystoreAlias,
-        keystorealiaspass: buildOptions.keystorealiaspass ||
-            config.android.buildOptions.keystoreAliasPassword,
-        androidreleasetype: buildOptions.androidreleasetype ||
-            config.android.buildOptions.releaseType ||
-            'AAB',
-        signingtype: buildOptions.signingtype ||
-            config.android.buildOptions.signingType ||
-            'jarsigner',
+        keystorealiaspass: buildOptions.keystorealiaspass || config.android.buildOptions.keystoreAliasPassword,
+        androidreleasetype: buildOptions.androidreleasetype || config.android.buildOptions.releaseType || 'AAB',
+        signingtype: buildOptions.signingtype || config.android.buildOptions.signingType || 'jarsigner',
         configuration: buildOptions.configuration || 'Release',
     };
     try {
@@ -58,5 +53,5 @@ async function build(config, platformName, buildOptions) {
 }
 exports.build = build;
 function createBuildablePlatformFilter(config) {
-    return platform => platform === config.ios.name || platform === config.android.name;
+    return (platform) => platform === config.ios.name || platform === config.android.name;
 }
